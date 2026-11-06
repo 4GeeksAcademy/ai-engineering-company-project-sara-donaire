@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candidate application | Nexova Solutions</title>
+  <meta name="description" content="Join the Nexova Solutions talent network. Send your profile once and our selection consultants will contact you when a search matches your experience.">
+  <link rel="canonical" href="https://www.nexova.example/application.html">
+  <meta name="theme-color" content="#1e1b4b">
+  <link rel="stylesheet" href="assets/tailwind.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Candidate application",
+    "url": "https://www.nexova.example/application.html",
+    "description": "Application form to join the Nexova Solutions talent network.",
+    "publisher": { "@id": "https://www.nexova.example/#organization", "@type": "EmploymentAgency", "name": "Nexova Solutions" }
+  }
+  </script>
+  <script src="validation.js" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-indigo-900 focus:shadow-lg">Skip to main content</a>
+
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600" aria-label="Nexova Solutions, home">
+        <svg class="h-8 w-8" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect width="32" height="32" rx="8" fill="#312e81"/>
+          <path d="M9 23V9h2.6l7.8 9.6V9H22v14h-2.6l-7.8-9.6V23z" fill="#fff"/>
+        </svg>
+        <span class="text-lg font-bold tracking-tight text-indigo-950">Nexova<span class="font-medium text-slate-500"> Solutions</span></span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="flex items-center gap-4 text-sm font-medium text-slate-700">
+          <li><a href="index.html" class="rounded hover:text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">Home</a></li>
+          <li><a href="application.html" aria-current="page" class="rounded font-semibold text-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-14">
+    <h1 class="text-3xl font-bold tracking-tight text-indigo-950 sm:text-4xl">Join our talent network</h1>
+    <p class="mt-3 text-slate-600">Tell us about your experience once. When a client opens a search that matches your profile, one of our selection consultants will contact you. Fields marked with <span class="font-semibold text-red-700" aria-hidden="true">*</span><span class="sr-only">an asterisk</span> are required.</p>
+
+    <div id="form-success" role="status" aria-live="polite" tabindex="-1" class="mt-6 hidden rounded-lg border border-teal-300 bg-teal-50 p-4 text-teal-900 focus:outline-none">
+      <p class="font-semibold">Application received.</p>
+      <p class="mt-1 text-sm">Thank you. A Nexova consultant will review your profile and contact you if a search matches your experience.</p>
+    </div>
+
+    <div id="form-errors" role="alert" class="mt-6 hidden rounded-lg border border-red-300 bg-red-50 p-4 text-red-800">
+      <p class="font-semibold">Please fix the highlighted fields before sending.</p>
+      <p id="form-errors-count" class="mt-1 text-sm"></p>
+    </div>
+
+    <form id="application-form" action="#" method="post" novalidate class="mt-8 space-y-8" aria-describedby="form-help">
+      <p id="form-help" class="sr-only">Errors are shown under each field as you complete it.</p>
+
+      <fieldset class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <legend class="px-2 text-lg font-semibold text-indigo-950">Personal details</legend>
+        <div class="mt-2 grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="firstName" class="block text-sm font-medium text-slate-700">First name <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required minlength="2" maxlength="50" aria-describedby="firstName-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="firstName-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="lastName" class="block text-sm font-medium text-slate-700">Last name <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required minlength="2" maxlength="80" aria-describedby="lastName-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="lastName-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">Email <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="email-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="email-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-slate-700">Phone <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+34 612 345 678" aria-describedby="phone-hint phone-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="phone-hint" class="mt-1 text-xs text-slate-500">Include the country code, for example +34 or +1.</p>
+            <p id="phone-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="country" class="block text-sm font-medium text-slate-700">Country of residence <span class="text-red-700" aria-hidden="true">*</span></label>
+            <select id="country" name="country" autocomplete="country" required aria-describedby="country-error"
+                    class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+              <option value="">Select a country</option>
+              <option value="ES">Spain</option>
+              <option value="US">United States</option>
+              <option value="OTHER">Other</option>
+            </select>
+            <p id="country-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="city" class="block text-sm font-medium text-slate-700">City <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="city" name="city" type="text" autocomplete="address-level2" required minlength="2" maxlength="80" aria-describedby="city-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="city-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <legend class="px-2 text-lg font-semibold text-indigo-950">Professional profile</legend>
+        <div class="mt-2 grid gap-5 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label for="desiredRole" class="block text-sm font-medium text-slate-700">Role you are looking for <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="desiredRole" name="desiredRole" type="text" required minlength="3" maxlength="100" placeholder="e.g. Sales Manager" aria-describedby="desiredRole-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="desiredRole-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="sector" class="block text-sm font-medium text-slate-700">Sector <span class="text-red-700" aria-hidden="true">*</span></label>
+            <select id="sector" name="sector" required aria-describedby="sector-error"
+                    class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+              <option value="">Select a sector</option>
+              <option value="technology">Technology</option>
+              <option value="retail">Retail</option>
+              <option value="financial-services">Financial services</option>
+              <option value="other">Other</option>
+            </select>
+            <p id="sector-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="seniority" class="block text-sm font-medium text-slate-700">Seniority level <span class="text-red-700" aria-hidden="true">*</span></label>
+            <select id="seniority" name="seniority" required aria-describedby="seniority-error"
+                    class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+              <option value="">Select a level</option>
+              <option value="mid-management">Mid-management</option>
+              <option value="senior-management">Senior management</option>
+              <option value="executive">Executive (C-level, director)</option>
+            </select>
+            <p id="seniority-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="yearsExperience" class="block text-sm font-medium text-slate-700">Years of professional experience <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="yearsExperience" name="yearsExperience" type="number" inputmode="numeric" required min="0" max="50" step="1" aria-describedby="yearsExperience-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="yearsExperience-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="englishLevel" class="block text-sm font-medium text-slate-700">English level (CEFR) <span class="text-red-700" aria-hidden="true">*</span></label>
+            <select id="englishLevel" name="englishLevel" required aria-describedby="englishLevel-error"
+                    class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+              <option value="">Select a level</option>
+              <option value="A2">A2 – Elementary</option>
+              <option value="B1">B1 – Intermediate</option>
+              <option value="B2">B2 – Upper intermediate</option>
+              <option value="C1">C1 – Advanced</option>
+              <option value="C2">C2 – Proficient</option>
+              <option value="native">Native</option>
+            </select>
+            <p id="englishLevel-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="salaryExpectation" class="block text-sm font-medium text-slate-700">Gross annual salary expectation <span class="text-red-700" aria-hidden="true">*</span></label>
+            <div class="mt-1 flex rounded-md shadow-sm">
+              <input id="salaryExpectation" name="salaryExpectation" type="number" inputmode="numeric" required min="20000" max="400000" step="1000" aria-describedby="salary-hint salaryExpectation-error"
+                     class="block w-full min-w-0 rounded-l-md border border-slate-300 px-3 py-2 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+              <label for="salaryCurrency" class="sr-only">Currency</label>
+              <select id="salaryCurrency" name="salaryCurrency" class="rounded-r-md border border-l-0 border-slate-300 bg-slate-50 px-3 py-2 text-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+              </select>
+            </div>
+            <p id="salary-hint" class="mt-1 text-xs text-slate-500">Between 20,000 and 400,000 per year.</p>
+            <p id="salaryExpectation-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div>
+            <label for="availableFrom" class="block text-sm font-medium text-slate-700">Available from <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="availableFrom" name="availableFrom" type="date" required aria-describedby="availableFrom-hint availableFrom-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="availableFrom-hint" class="mt-1 text-xs text-slate-500">From today up to 12 months ahead.</p>
+            <p id="availableFrom-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="linkedinUrl" class="block text-sm font-medium text-slate-700">LinkedIn profile URL <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="linkedinUrl" name="linkedinUrl" type="url" required placeholder="https://www.linkedin.com/in/your-name" aria-describedby="linkedinUrl-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600">
+            <p id="linkedinUrl-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="cv" class="block text-sm font-medium text-slate-700">CV <span class="text-red-700" aria-hidden="true">*</span></label>
+            <input id="cv" name="cv" type="file" required accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="cv-hint cv-error"
+                   class="mt-1 block w-full rounded-md border border-slate-300 bg-white text-sm file:mr-4 file:border-0 file:bg-indigo-50 file:px-4 file:py-2 file:font-semibold file:text-indigo-800 hover:file:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=false]:border-teal-600">
+            <p id="cv-hint" class="mt-1 text-xs text-slate-500">PDF or DOCX, up to 5 MB.</p>
+            <p id="cv-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="summary" class="block text-sm font-medium text-slate-700">Short summary of your experience <span class="text-red-700" aria-hidden="true">*</span></label>
+            <textarea id="summary" name="summary" rows="4" required minlength="50" maxlength="1000" aria-describedby="summary-hint summary-error"
+                      class="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 shadow-sm focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/40 aria-[invalid=true]:border-red-600 aria-[invalid=true]:ring-red-600/30 aria-[invalid=false]:border-teal-600"></textarea>
+            <p id="summary-hint" class="mt-1 text-xs text-slate-500">Between 50 and 1,000 characters. <span id="summary-count" aria-live="polite">0 / 1000</span></p>
+            <p id="summary-error" class="mt-1 hidden text-sm text-red-700"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        <legend class="px-2 text-lg font-semibold text-indigo-950">Privacy</legend>
+        <div class="mt-2 flex items-start gap-3">
+          <input id="privacyConsent" name="privacyConsent" type="checkbox" required aria-describedby="privacyConsent-error"
+                 class="mt-1 h-5 w-5 flex-none rounded border-slate-300 accent-indigo-700 focus:ring-2 focus:ring-indigo-600">
+          <label for="privacyConsent" class="text-sm text-slate-700">I agree that Nexova Solutions stores my data to contact me about selection processes that match my profile. <span class="text-red-700" aria-hidden="true">*</span></label>
+        </div>
+        <p id="privacyConsent-error" class="mt-1 hidden text-sm text-red-700"></p>
+      </fieldset>
+
+      <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+        <button type="reset" class="rounded-md border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2">Clear form</button>
+        <button type="submit" class="rounded-md bg-indigo-700 px-6 py-3 font-semibold text-white hover:bg-indigo-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2">Send application</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="mt-12 bg-slate-900 text-slate-300">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <p>&copy; 2026 Nexova Solutions · Valencia, Spain · Miami, Florida</p>
+      <p><a href="mailto:hello@nexova.example" class="hover:text-white">hello@nexova.example</a></p>
+    </div>
+  </footer>
+</body>
+</html>
