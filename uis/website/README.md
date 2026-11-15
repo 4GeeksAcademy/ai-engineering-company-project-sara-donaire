@@ -56,3 +56,10 @@ Each field shows the error message defined in the briefing. Because the form is 
 - Visible focus rings on every interactive element; mobile menu uses native `<details>` so it works with the keyboard and without JavaScript.
 - Checked with axe-core (WCAG 2 A/AA + best practices): 0 violations on both pages. No horizontal scroll at 360, 768 and 1440 px.
 - Schema.org JSON-LD, meta description, canonical URL, descriptive `alt` on all images, lazy loading below the fold.
+
+## Performance
+
+PageSpeed Insights cannot reach the Codespaces URL (it audits the GitHub port warning page), so Lighthouse 12 was run against the Codespaces preview (mobile). Both pages score 100 in Performance, Accessibility, Best Practices and SEO:
+
+- [docs/lighthouse-index.png](docs/lighthouse-index.png)
+- [docs/lighthouse-application.png](docs/lighthouse-application.png)
