@@ -4,11 +4,13 @@ Milestone 1: the company's first public website. Static site built with **HTML +
 
 | File | What it is |
 |---|---|
-| `index.html` | Landing page: header and navigation, hero, key figures, services, why Nexova, how a search works, call to action and footer. Schema.org `EmploymentAgency` (a `LocalBusiness` type) in JSON-LD. |
-| `application.html` | Candidate application form to join Nexova's talent network. |
-| `validation.js` | Real-time validation (on blur and while typing), specific error messages, blocks invalid submissions and simulates a successful one. |
+| `index.html` | Landing page with the sections required in `BRIEFING.md`, in order: header (Home, Services, Talent, Contact), hero, services (3 columns), why Nexova (2 columns), contact and footer. Schema.org `Organization` in JSON-LD, exactly as given in the briefing. |
+| `application.html` | Talent registration form for professionals in active or passive job search, with the 11 fields from `BRIEFING.md` and the notice for companies. |
+| `validation.js` | Real-time validation (on blur and while typing), the exact error messages from the briefing, blocks invalid submissions and shows the briefing's success message. |
 | `assets/tailwind.css` | Tailwind CSS compiled and minified from `src/input.css`. No hand-written CSS. |
 | `tailwind.config.js`, `src/input.css` | Tailwind build configuration. |
+
+Base language: English. The full briefing is in [`BRIEFING.md`](../../BRIEFING.md) at the repository root (unmodified copy of `nexova-BRIEFING.en.md`).
 
 ## Run it locally (Codespaces)
 
@@ -29,37 +31,28 @@ cd uis/website
 npx --yes tailwindcss@3.4.17 -i ./src/input.css -o ./assets/tailwind.css --minify
 ```
 
-## Why this form (context)
+## Form fields (from BRIEFING.md)
 
-The briefing (`CONTEXT.md`) places Nexova's core business in **Talent Selection Operations**: 40 consultants screen 30–80 CVs per search by hand, matching depends on intuition, and candidates have no status visibility. The form captures exactly what a consultant (and, later, the CV screening agent in `company-choice.md`) needs to match a candidate to a vacancy: role, sector, seniority, years of experience, English level, location, salary range, availability, LinkedIn and CV.
+| Field | `name` | Type | Rule | Required |
+|---|---|---|---|---|
+| Full name | `fullName` | text | At least 2 words (first and last name) | Yes |
+| Email | `email` | email | Contains @ and a valid domain (`user@domain.com`) | Yes |
+| Phone | `phone` | tel | `+` + country code + number, e.g. `+34 612 345 678` | Yes |
+| Country of residence | `country` | select | Spain / United States / Other | Yes |
+| Years of experience | `yearsExperience` | number | Whole number between 0 and 50 | Yes |
+| Sector of interest | `sector` | select | Technology / Retail / Financial Services / Consulting / Other | Yes |
+| English level | `englishLevel` | select | Basic / Intermediate / Advanced / Native | Yes |
+| Availability | `availability` | radio | Immediate / 1 month / 2-3 months / Just exploring | Yes |
+| LinkedIn (profile URL) | `linkedin` | url | If filled in, must start with `http://` or `https://` | No |
+| Additional comments | `comments` | textarea | Max 500 characters, visible counter | No |
+| I accept the data policy | `dataPolicy` | checkbox | Must be checked | Yes |
 
-### Fields and domain rules
-
-| Field (`name`) | Type | Rule |
-|---|---|---|
-| `firstName`, `lastName` | text | Required, at least 2 characters, letters only (accents, spaces, hyphens, apostrophes allowed) |
-| `email` | email | Required, valid email format |
-| `phone` | tel | Required, international format with country code; `+34` + 9 digits if country is Spain, `+1` + 10 digits if United States |
-| `country` | select | Required: Spain, United States, Other (Nexova's two markets) |
-| `city` | text | Required, at least 2 characters |
-| `desiredRole` | text | Required, at least 3 characters |
-| `sector` | select | Required: technology, retail, financial services (Nexova's client sectors) or other |
-| `seniority` | select | Required: mid-management, senior management, executive (Nexova headhunts executive and mid-management profiles) |
-| `yearsExperience` | number | Required, whole number 0–50; senior management needs ≥ 5, executive needs ≥ 8 |
-| `englishLevel` | select | Required, CEFR scale (A2–C2, native) |
-| `salaryExpectation` + `salaryCurrency` | number + select | Required, 20,000–400,000 per year, EUR or USD |
-| `availableFrom` | date | Required, from today up to 12 months ahead |
-| `linkedinUrl` | url | Required, `https://` + `linkedin.com/in/<profile>` |
-| `cv` | file | Required, PDF or DOCX, max 5 MB |
-| `summary` | textarea | Required, 50–1,000 characters, live counter |
-| `privacyConsent` | checkbox | Required |
-
-"Clear form" resets every field and removes all error and success states. There is no backend yet: a valid submission shows a confirmation message.
+Each field shows the error message defined in the briefing. Because the form is only for job seekers, it shows the notice "Are you a company looking for talent? Write to us at contacto@nexova.com". "Clear form" resets every field and removes all error and success states. There is no backend yet: a valid submission shows the briefing's success message.
 
 ## Accessibility and SEO
 
 - Semantic landmarks (`header`, `nav`, `main`, `section`, `article`, `footer`, `address`), skip link, one `h1` per page.
 - Every input has a `<label for>`, related fields are grouped in `<fieldset>`/`<legend>`, errors are linked with `aria-describedby` and flagged with `aria-invalid`; the error summary uses `role="alert"` and the success message `role="status"`.
 - Visible focus rings on every interactive element; mobile menu uses native `<details>` so it works with the keyboard and without JavaScript.
-- Checked with axe-core (WCAG 2 A/AA + best practices): 0 violations on both pages. No horizontal scroll from 360 px to 1440 px.
+- Checked with axe-core (WCAG 2 A/AA + best practices): 0 violations on both pages. No horizontal scroll at 360, 768 and 1440 px.
 - Schema.org JSON-LD, meta description, canonical URL, descriptive `alt` on all images, lazy loading below the fold.
