@@ -13,3 +13,9 @@ Organize `uis/` by **different concerns** — each subfolder covers a distinct a
 - **Recommendation**: document in this file (or in sub-READMEs) the applications you add, their objective, the technology used, and how to run them.
 
 > _Estas instrucciones también están disponibles en [español](./README.es.md)._
+
+## Projects in this folder
+
+| Folder | Description | Run |
+|---|---|---|
+| [`website/`](./website/README.md) | Nexova public website: landing page and candidate application form (HTML + Tailwind CSS + vanilla JS) | `npx --yes http-server uis/website -p 3000 -a 0.0.0.0 -c-1` |

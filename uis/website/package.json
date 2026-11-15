@@ -1,0 +1,9 @@
+{
+  "name": "nexova-website",
+  "private": true,
+  "description": "Nexova Solutions public website (HTML + Tailwind CSS)",
+  "scripts": {
+    "build:css": "npx --yes tailwindcss@3.4.17 -i ./src/input.css -o ./assets/tailwind.css --minify",
+    "start": "npx --yes http-server . -p 3000 -a 0.0.0.0 -c-1"
+  }
+}
